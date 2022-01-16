@@ -10,16 +10,7 @@ p {
     color: #3260a8;
     text-align: center;
 }
-@keyframes barrage{
-    from{
-      left:100%;
-      transform:translateX(0);
-    }
-    to{
-      left:0;
-      transform:translateX(-100%);
-    }
- }
+
  .alert {
     padding: 20px;
     background-color: #f44336; /* Red */
