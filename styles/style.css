@@ -1,0 +1,33 @@
+body {
+    width: 600px;
+    margin: 0 auto;
+    background-color: #a6c6e3;
+    padding: 0 20px 20px 20px;
+    border: 5px solid black;
+  }
+
+p {
+    color: #3260a8;
+    text-align: center;
+}
+
+.Chinese {
+    font-family: 'Zhi Mang Xing', cursive;
+    font-size: 60px;
+}
+
+.English {
+    font-family: 'Homemade Apple', cursive;
+    font-size: 40px;
+}
+
+.Footnote {
+    font-size: 15px;
+}
+
+#xiaoping, img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
