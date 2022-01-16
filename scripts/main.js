@@ -8,7 +8,7 @@ function generateWish(){
 }
 
 function randomColor(){
-    color = ['#FFD700','#FF4500','#006400']
+    color = ['#FFD700','#FF4500','#006400','#483D8B','#2F4F4F','#FF8C00','#6495ED']
     return get_random(color)
 }
 function get_random (list) {
