@@ -1,5 +1,5 @@
 body {
-    width: 600px;
+    width: 100%;
     margin: 0 auto;
     background-color: #a6c6e3;
     /* padding: 0 20px 20px 20px; */
@@ -11,6 +11,29 @@ p {
     color: #3260a8;
     text-align: center;
 }
+@keyframes barrage{
+    from{
+      left:100%;
+      transform:translateX(0);
+    }
+    to{
+      left:0;
+      transform:translateX(-100%);
+    }
+ }
+ .alert {
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px;
+    font-family: 'Zhi Mang Xing', cursive;
+    font-size: 60px;
+  }
+ 
+.block{
+    position:absolute;
+    animation:barrage 5s linear 0s;
+ }
 
 .Chinese {
     font-family: 'Zhi Mang Xing', cursive;
@@ -26,9 +49,14 @@ p {
     font-size: 15px;
 }
 
-#xiaoping, img {
+img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+}
+#Wishes {
+    font-family: 'ZCOOL KuaiLe', cursive;
+    font-size: 40px;
+    color:gold;
 }
