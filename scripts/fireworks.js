@@ -116,10 +116,10 @@ JS_FIREWORKS.Fireworks = function (options) {
         _ctx.globalCompositeOperation = 'lighter';
         _ctx.fillStyle = "#3260a8";
         _ctx.textAlign = "center";
-        _ctx.font = '50px Homemade Apple';
-        _ctx.fillText("Happy Birthday, Rainco!", _width/2.0, _height/2.0-60)
-        _ctx.font = '60px Zhi Mang Xing';
-        _ctx.fillText("肖宇梁 27岁 生日快乐！！！", _width/2.0, _height/2.0+60)
+        // _ctx.font = '50px Homemade Apple';
+        // _ctx.fillText("Happy Birthday, Rainco!", _width/2.0, _height/2.0-60)
+        // _ctx.font = '60px Zhi Mang Xing';
+        // _ctx.fillText("肖宇梁 27岁 生日快乐！！！", _width/2.0, _height/2.0+60)
         tmp = _fireworks.length;
         // render fireworks
         while (tmp--) {

@@ -1,4 +1,8 @@
 window.onload = function () {
+    var canvas = document.getElementById('fireworks-canvas');
+    var barrage_canvas = document.getElementById('canvas');
+    canvas.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    canvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
     var firework = JS_FIREWORKS.Fireworks({
         id : 'fireworks-canvas',
         hue : 120,
@@ -10,7 +14,7 @@ window.onload = function () {
             top: 50,
             bottom: 240,
             left: 50,
-            right: 590
+            right: canvas.width
         },
         fireworkSpeed : 3,
         fireworkAcceleration : 1.05,
@@ -18,6 +22,7 @@ window.onload = function () {
         particleGravity : 1.5
     });
     firework.start();
+
 };
 
 function generateWish(){
