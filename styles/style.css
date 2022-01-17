@@ -42,12 +42,12 @@ p {
     font-size: 15px;
 }
 
-img {
+/* img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-}
+} */
 #Wishes {
     font-family: 'ZCOOL KuaiLe', cursive;
     font-size: 40px;
@@ -55,6 +55,8 @@ img {
 }
 .Click {
     font-size: 30px;
+    text-align: center;
+    color: white;
 }
 #fireworks-canvas, #others{
     position:absolute; top:0; left:0; right:0; 
@@ -66,4 +68,17 @@ img {
     z-index: 1;
     text-align: center;
     margin:0 auto;
+}
+
+#play-pause-button{
+    font-size: 50px;
+    cursor: pointer;
+  }
+
+#button {
+    width: 50px;
+    height: 50px;
+    filter: invert(1);
+    padding: 0;
+    margin-top:0px;
 }
