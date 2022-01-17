@@ -1,8 +1,10 @@
-window.onload = function () {
+window.onload = window.onresize = function () {
     var canvas = document.getElementById('fireworks-canvas');
     var barrage_canvas = document.getElementById('canvas');
     canvas.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     canvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    barrage_canvas.width = canvas.width;
+    barrage_canvas.height = canvas.height*0.5;
     var firework = JS_FIREWORKS.Fireworks({
         id : 'fireworks-canvas',
         hue : 120,
@@ -22,7 +24,28 @@ window.onload = function () {
         particleGravity : 2.0
     });
     firework.start();
-
+    let barrage = new Barrage('canvas');
+    barrage.draw();
+    let myImage = document.querySelector('#cat-xyl');
+    let num = 1;
+    myImage.onclick = function() {
+        let mySrc = myImage.getAttribute('src');
+        if(mySrc === 'images/cat.jpg') {
+        myImage.setAttribute('src', 'images/cat-head.gif');
+        } else {
+        myImage.setAttribute('src', 'images/cat.jpg');
+        }
+        let wish = document.querySelector('#Wishes');
+        wish.style.color=barrage.getColor();
+        if (num % 5 == 0){
+            wish.innerText = '肖宇梁是全天下最可爱的小猫咪！！！';
+        }
+        else{
+            wish.innerText = generateWish();
+        }
+        num += 1;
+        barrage.shoot(wish.innerText);
+    }
 };
 
 function generateWish(){
@@ -38,32 +61,8 @@ function randomColor(){
 function get_random (list) {
     return list[Math.floor((Math.random()*list.length))];
   }
-
-let barrage = new Barrage('canvas');
-barrage.draw();
-let myImage = document.querySelector('#cat-xyl');
-let num = 1;
-
-myImage.onclick = function() {
-    let mySrc = myImage.getAttribute('src');
-    if(mySrc === 'images/cat.jpg') {
-      myImage.setAttribute('src', 'images/cat-head.gif');
-    } else {
-      myImage.setAttribute('src', 'images/cat.jpg');
-    }
-    let wish = document.querySelector('#Wishes');
-    wish.style.color=barrage.getColor();
-    if (num % 5 == 0){
-        wish.innerText = '肖宇梁是全天下最可爱的小猫咪！！！';
-    }
-    else{
-        wish.innerText = generateWish();
-    }
-    num += 1;
-    barrage.shoot(wish.innerText);
-}
 document.addEventListener('click', musicPlay);
 function musicPlay() {
-    document.getElementById('hp_audio').play();
-    document.removeEventListener('click', musicPlay);
+      document.getElementById('hp_audio').play();
+      document.removeEventListener('click', musicPlay);
 }

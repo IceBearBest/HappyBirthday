@@ -58,7 +58,7 @@ img {
     text-align: center;
     color: white;
 }
-#fireworks-canvas, #others{
+#fireworks-canvas, #others, #canvas{
     position:absolute; top:0; left:0; right:0; 
 }
 #fireworks-canvas{
@@ -68,6 +68,10 @@ img {
     z-index: 1;
     text-align: center;
     margin:0 auto;
+}
+#canvas{
+    z-index:2;
+    margin: 0 auto;
 }
 
 #play-pause-button{
