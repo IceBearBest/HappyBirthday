@@ -1,10 +1,12 @@
 window.onload = window.onresize = function () {
+    // reset size of canvas
     var canvas = document.getElementById('fireworks-canvas');
     var barrage_canvas = document.getElementById('canvas');
     canvas.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     canvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
     barrage_canvas.width = canvas.width;
-    barrage_canvas.height = canvas.height*0.5;
+    barrage_canvas.height = canvas.height*0.3;
+    //start the firework
     var firework = JS_FIREWORKS.Fireworks({
         id : 'fireworks-canvas',
         hue : 120,
@@ -24,9 +26,10 @@ window.onload = window.onresize = function () {
         particleGravity : 2.0
     });
     firework.start();
+    //start the barrage
     let barrage = new Barrage('canvas');
     barrage.draw();
-    let myImage = document.querySelector('#cat-xyl');
+    let myImage = document.querySelector('#cat-matrix');
     myImage.onclick = function() {
         let mySrc = myImage.getAttribute('src');
         if(mySrc === 'images/cat.jpg') {
@@ -38,6 +41,7 @@ window.onload = window.onresize = function () {
         wish.style.color=barrage.getColor();
         wish.innerText = generateWish();
         barrage.shoot(wish.innerText);
+        checkImg();
     }
 };
 
@@ -59,3 +63,62 @@ function musicPlay() {
       document.getElementById('hp_audio').play();
       document.removeEventListener('click', musicPlay);
 }
+
+ // show the cat images
+ let cat_div = document.getElementById('cat-matrix');
+ var images =new Array(9);
+ for (let i = 0; i < 3; i++){
+     let row_div = document.createElement('div');
+     row_div.classList.add('row');
+     cat_div.appendChild(row_div);
+     for (let j=0; j < 3; j++){
+         let col_div = document.createElement('div');
+         col_div.classList.add('col');
+         row_div.appendChild(col_div);
+         let k = i*3+j;
+         images[k] = document.createElement('img');
+         col_div.appendChild(images[k]);   
+     }
+ }
+ resetImages(images);
+ for (let i=0; i < 9; i++){
+     images[i].onclick=function(){
+        let mySrc = images[i].getAttribute('src');
+        images[i].setAttribute('src', mySrc.replace('_cat.','_xyl.'));
+     }
+ }
+ function resetImages(images){
+     var used = [];
+     var exclued = []
+     let max_idx = 38;
+     let format = 'JPG';
+     for (let i=0; i<9; i++){
+         if (i == 4){
+             max_idx = 3;
+             format = 'GIF';
+         }
+         else{
+             max_idx = 38;
+             format = 'JPG';
+         }
+         let num = Math.floor((Math.random()*max_idx));
+         while (used.includes(num)){
+            num = Math.floor((Math.random()*max_idx));
+         }
+         used.push(num);
+         images[i].setAttribute('src', 'images/cat-sim/'.concat(String(num+1).padStart(2,'0'), '_cat.', format));
+     }
+ }
+
+ function checkImg(){
+     let num_left = 0;
+     for (let i = 0; i < 9; i++){
+        let mySrc = images[i].getAttribute('src');
+        if (mySrc.includes('_cat')){
+            num_left += 1;
+        }
+     }
+     if (num_left == 0){
+         resetImages(images);
+     }
+ }
