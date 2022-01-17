@@ -27,7 +27,6 @@ window.onload = window.onresize = function () {
     let barrage = new Barrage('canvas');
     barrage.draw();
     let myImage = document.querySelector('#cat-xyl');
-    let num = 1;
     myImage.onclick = function() {
         let mySrc = myImage.getAttribute('src');
         if(mySrc === 'images/cat.jpg') {
@@ -37,21 +36,15 @@ window.onload = window.onresize = function () {
         }
         let wish = document.querySelector('#Wishes');
         wish.style.color=barrage.getColor();
-        if (num % 5 == 0){
-            wish.innerText = '肖宇梁是全天下最可爱的小猫咪！！！';
-        }
-        else{
-            wish.innerText = generateWish();
-        }
-        num += 1;
+        wish.innerText = generateWish();
         barrage.shoot(wish.innerText);
     }
 };
 
 function generateWish(){
     addr = ['肖宇梁','小月亮','梁梁','梁仔','鱼粮','梁咪']
-    wish = ['暴富!!!','平安健康～','每天开心!','好吃好喝不长胖!']
-    return '祝'.concat(get_random(addr), '2022', get_random(wish))
+    wish = ['暴富!!!','平安健康～','每天开心!','好吃好喝不长胖!','牙牙健康白又壮','越来越帅','拍戏顺利！','可可爱爱']
+    return ''.concat(get_random(addr), '2022', get_random(wish))
 }
 
 function randomColor(){
