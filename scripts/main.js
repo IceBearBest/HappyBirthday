@@ -6,7 +6,7 @@ window.onload = function () {
     var firework = JS_FIREWORKS.Fireworks({
         id : 'fireworks-canvas',
         hue : 120,
-        particleCount : 100,
+        particleCount : 300,
         delay : 0,
         minDelay : 20,
         maxDelay : 40,
@@ -17,9 +17,9 @@ window.onload = function () {
             right: canvas.width
         },
         fireworkSpeed : 3,
-        fireworkAcceleration : 1.05,
-        particleFriction : .95,
-        particleGravity : 1.5
+        fireworkAcceleration : 1.03,
+        particleFriction : 0.96,
+        particleGravity : 2.0
     });
     firework.start();
 
