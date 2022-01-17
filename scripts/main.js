@@ -57,3 +57,8 @@ myImage.onclick = function() {
     num += 1;
     barrage.shoot(wish.innerText);
 }
+document.addEventListener('click', musicPlay);
+function musicPlay() {
+    document.getElementById('hp_audio').play();
+    document.removeEventListener('click', musicPlay);
+}

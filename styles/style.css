@@ -1,7 +1,8 @@
 body {
     width: 100%;
     margin: 0 auto;
-    background-color: #a6c6e3;
+    /* background-color: #a6c6e3; */
+    background-color:#182240;
     /* padding: 0 20px 20px 20px; */
     text-align: center;
   }
@@ -43,7 +44,7 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 1000px;
 }
 #Wishes {
     font-family: 'ZCOOL KuaiLe', cursive;
