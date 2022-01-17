@@ -93,6 +93,7 @@ function musicPlay() {
  }
  function resetImages(images){
      var used = [];
+     var excluded = [26,24]
      let max_idx = 38;
      let format = 'JPG';
      for (let i=0; i<9; i++){
@@ -105,7 +106,7 @@ function musicPlay() {
              format = 'JPG';
          }
          let num = Math.floor((Math.random()*max_idx));
-         while (used.includes(num)){
+         while (used.includes(num)|| excluded.includes(num+1)){
             num = Math.floor((Math.random()*max_idx));
          }
          used.push(num);
