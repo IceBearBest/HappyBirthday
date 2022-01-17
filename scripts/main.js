@@ -30,6 +30,7 @@ window.onload = window.onresize = function () {
     let barrage = new Barrage('canvas');
     barrage.draw();
     let myImage = document.querySelector('#cat-matrix');
+    let reset_next = false;
     myImage.onclick = function() {
         let mySrc = myImage.getAttribute('src');
         if(mySrc === 'images/cat.jpg') {
@@ -41,7 +42,10 @@ window.onload = window.onresize = function () {
         wish.style.color=barrage.getColor();
         wish.innerText = generateWish();
         barrage.shoot(wish.innerText);
-        checkImg();
+        if (reset_next){
+            resetImages(images);
+        }
+        reset_next = shouldReset();
     }
 };
 
@@ -89,7 +93,6 @@ function musicPlay() {
  }
  function resetImages(images){
      var used = [];
-     var exclued = []
      let max_idx = 38;
      let format = 'JPG';
      for (let i=0; i<9; i++){
@@ -110,7 +113,7 @@ function musicPlay() {
      }
  }
 
- function checkImg(){
+ function shouldReset(){
      let num_left = 0;
      for (let i = 0; i < 9; i++){
         let mySrc = images[i].getAttribute('src');
@@ -118,7 +121,5 @@ function musicPlay() {
             num_left += 1;
         }
      }
-     if (num_left == 0){
-         resetImages(images);
-     }
+     return num_left == 0;
  }
