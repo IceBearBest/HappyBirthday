@@ -21,16 +21,16 @@ p {
 
 .Chinese {
     font-family: 'Zhi Mang Xing', cursive;
-    font-size: 60px;
+    font-size: 7vw;
 }
 
 .English {
     font-family: 'Homemade Apple', cursive;
-    font-size: 50px;
+    font-size: 5vw;
 }
 
 .Footnote {
-    font-size: 15px;
+    font-size: 2vw;
 }
 
 img {
@@ -41,11 +41,11 @@ img {
 }
 #Wishes {
     font-family: 'ZCOOL KuaiLe', cursive;
-    font-size: 40px;
+    font-size: 4vw;
     color:gold;
 }
 .Click {
-    font-size: 30px;
+    font-size: 3vw;
     text-align: center;
     color: white;
 }

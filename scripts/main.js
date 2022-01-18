@@ -93,7 +93,7 @@ function musicPlay() {
  }
  function resetImages(images){
      var used = [];
-     var excluded = [26,24]
+     var excluded = [26,24,16]
      let max_idx = 38;
      let format = 'JPG';
      for (let i=0; i<9; i++){
