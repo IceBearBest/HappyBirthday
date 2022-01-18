@@ -56,12 +56,12 @@ img {
     z-index: 0;
 }
 #others {
-    z-index: 0;
+    z-index: 1;
     text-align: center;
     margin:0 auto;
 }
 #canvas{
-    z-index:0;
+    z-index:2;
     margin: 0 auto;
 }
 
