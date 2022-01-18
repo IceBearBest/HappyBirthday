@@ -50,7 +50,7 @@ window.onload = window.onresize = function () {
 };
 
 function generateWish(){
-    addr = ['肖宇梁','小月亮','梁梁','梁仔','鱼粮','梁咪']
+    addr = ['肖宇梁','小月亮','梁梁','鱼粮','梁咪']
     wish = ['暴富!!!','平安健康～','每天开心!','好吃好喝不长胖!','牙牙健康白又壮','越来越帅','拍戏顺利！','可可爱爱']
     return ''.concat(get_random(addr), '2022', get_random(wish))
 }
