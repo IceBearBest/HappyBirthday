@@ -94,7 +94,7 @@ function musicPlay() {
  function resetImages(images){
      var used = [];
      var excluded = [26,24,16]
-     let max_idx = 38;
+     let max_idx = 39;
      let format = 'JPG';
      for (let i=0; i<9; i++){
          if (i == 4){
@@ -102,7 +102,7 @@ function musicPlay() {
              format = 'GIF';
          }
          else{
-             max_idx = 38;
+             max_idx = 39;
              format = 'JPG';
          }
          let num = Math.floor((Math.random()*max_idx));
